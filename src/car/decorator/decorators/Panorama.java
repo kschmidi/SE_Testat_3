@@ -25,15 +25,15 @@ public class Panorama extends Car_Decorator{
 		return car.getPrice() + upcharge;
 	}
 	
-	public boolean is_Panorama_open() {
+	public boolean is_panorama_open() {
 		return is_panorama_open;
 	}
 	
-	public void open_Panorama() {
+	public void open_panorama() {
 		is_panorama_open = true;
 	}
 	
-	public void close_Panorama() {
+	public void close_panorama() {
 		is_panorama_open = false;
 	}
 

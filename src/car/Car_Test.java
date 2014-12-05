@@ -69,9 +69,9 @@ public class Car_Test{
 	public void test_meth_Pano() {
 		Panorama car = new Panorama(new Car(default_Text, default_price));
 		
-		assertFalse(car.is_Panorama_open());
-		car.open_Panorama();
-		assertTrue(car.is_Panorama_open());
+		assertFalse(car.is_panorama_open());
+		car.open_panorama();
+		assertTrue(car.is_panorama_open());
 	}
 	
 	@Test
@@ -85,7 +85,7 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_AC_And_Panorma() {
-		Vehicle c = Car_Simple_Factory.make_Car_With_AC_And_Panorama();
+		Vehicle c = Car_Simple_Factory.make_Car_with_AC_and_Panorama();
 		int price = default_price + Aircondition.upcharge + Panorama.upcharge;
 
 		assertEquals(default_Text + " with Panorama with an Aircondition", c.getDescription());
@@ -94,7 +94,7 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_AC_And_Panorma_And_Seat_Heat() {
-		Vehicle c = Car_Simple_Factory.make_Car_With_AC_And_Panorama_And_Seat_Heat();
+		Vehicle c = Car_Simple_Factory.make_Car_with_AC_and_Panorama_and_Seat_Heat();
 		int price = default_price + Aircondition.upcharge + Panorama.upcharge + Seat_Heat.upcharge;
 		
 		assertEquals(default_Text + " with Seat Heat with Panorama with an Aircondition", c.getDescription());
@@ -103,7 +103,7 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_AC_And_Seat_Heat() {
-		Vehicle c = Car_Simple_Factory.make_Car_With_AC_And_Seat_Heat();
+		Vehicle c = Car_Simple_Factory.make_Car_with_AC_and_Seat_Heat();
 		int price = default_price + Aircondition.upcharge + Seat_Heat.upcharge;
 		
 		assertEquals(default_Text + " with Seat Heat with an Aircondition", c.getDescription());
@@ -112,7 +112,7 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_Seat_Heat_And_Panorama() {
-		Vehicle c = Car_Simple_Factory.make_Car_With_Seat_Heat_And_Panorama();
+		Vehicle c = Car_Simple_Factory.make_Car_with_Seat_Heat_and_Panorama();
 		int price = default_price + Seat_Heat.upcharge + Panorama.upcharge;
 		
 		assertEquals(default_Text + " with Panorama with Seat Heat", c.getDescription());
