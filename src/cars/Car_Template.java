@@ -1,6 +1,6 @@
-package car;
+package cars;
 
-public interface Car_Interface{
+public abstract class Car_Template{
 	public abstract String getDescrition();
 	public abstract int getPrice();
 }

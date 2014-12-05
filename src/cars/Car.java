@@ -1,6 +1,6 @@
-package car;
+package cars;
 
-public class Car implements Car_Interface{
+public class Car extends Car_Template{
 	private String	description;
 	private int		price;
 
