@@ -13,9 +13,11 @@ A class Car is given (listed below), which ist to be expanded as a seperate clas
 
 Also there is to be created a Simple Factory to create Cars with more than one Decorators.
 
+This all should be tested with JUnit tests.
+
 ## The goal
 
-The goal of the excercise is to learn the principals of some of the programm pattern, which are learned in school.
+The goal of the excercise is to learn the principals of some of the programm pattern, which are learned in school. And also to refresh the use of JUnit tests.
 
 ### The excact excercise description (it's in german)
 
