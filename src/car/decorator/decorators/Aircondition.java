@@ -5,6 +5,8 @@ import car.decorator.Car_Decorator;
 
 
 public class Aircondition extends Car_Decorator{
+	public static int upcharge = 300;
+	
 	private Vehicle car;
 	private boolean is_AC_on;
 	
@@ -14,12 +16,12 @@ public class Aircondition extends Car_Decorator{
 	}
 	@Override
 	public String getDescription(){
-		return car.getDescription() + " with an Aircondition.";
+		return car.getDescription() + " with an Aircondition";
 	}
 
 	@Override
 	public int getPrice(){
-		return car.getPrice() + 300;
+		return car.getPrice() + upcharge;
 	}
 	
 	public boolean is_AC_on() {

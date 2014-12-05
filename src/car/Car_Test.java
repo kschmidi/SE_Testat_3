@@ -2,48 +2,93 @@ package car;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import car.decorator.decorators.Aircondition;
 import car.decorator.decorators.Panorama;
 import car.decorator.decorators.Seat_Heat;
+import factory.Car_Simple_Factory;
 
 public class Car_Test{
+	private int default_price;
+	private String default_Text;
+	
+	@Before
+	public void setup() {
+		default_price = Car_Simple_Factory.default_Price;
+		default_Text = Car_Simple_Factory.default_Text;
+	}
 
 	@Test
 	public void test_create_normal_car(){
-		String text = "A nice blue Car";
-		int price = 15000;
-		Vehicle c = new Car(text, price);
-		assertEquals(text, c.getDescription());
-		assertEquals(price, c.getPrice());
+		Vehicle c = new Car(default_Text, default_price);
+		
+		assertEquals(default_Text, c.getDescription());
+		assertEquals(default_price, c.getPrice());
 	}
 	
 	@Test
 	public void test_create_car_with_AC() {
-		String text = "A nice red Car";
-		int price = 17000;
-		Vehicle c = new Aircondition(new Car(text, price));
-		assertEquals(text + " with an Aircondition.", c.getDescription());
-		assertEquals(price + 300, c.getPrice());
+		Vehicle c = new Aircondition(new Car(default_Text, default_price));
+		int price = default_price + Aircondition.upcharge;
+		
+		assertEquals(default_Text + " with an Aircondition", c.getDescription());
+		assertEquals(price, c.getPrice());
 	}
 	
 
 	@Test
 	public void test_create_car_with_Panorama() {
-		String text = "A nice green Car";
-		int price = 22000;
-		Vehicle c = new Panorama(new Car(text, price));
-		assertEquals(text + " with Panorama.", c.getDescription());
-		assertEquals(price + 1000, c.getPrice());
+		Vehicle c = new Panorama(new Car(default_Text, default_price));
+		int price = default_price + Panorama.upcharge;
+		
+		assertEquals(default_Text + " with Panorama", c.getDescription());
+		assertEquals(price, c.getPrice());
 	}
 	
 	@Test
 	public void test_create_car_with_Seat_Heat() {
-		String text = "A nice violet Car";
-		int price = 25000;
-		Vehicle c = new Seat_Heat(new Car(text, price));
-		assertEquals(text + " with Seat Heat.", c.getDescription());
-		assertEquals(price + 500, c.getPrice());
+		Vehicle c = new Seat_Heat(new Car(default_Text, default_price));
+		int price = default_price + Seat_Heat.upcharge;
+		
+		assertEquals(default_Text + " with Seat Heat", c.getDescription());
+		assertEquals(price, c.getPrice());
+	}
+	
+	@Test
+	public void test_create_car_with_AC_And_Panorma() {
+		Vehicle c = Car_Simple_Factory.make_Car_With_AC_And_Panorama();
+		int price = default_price + Aircondition.upcharge + Panorama.upcharge;
+
+		assertEquals(default_Text + " with Panorama with an Aircondition", c.getDescription());
+		assertEquals(price, c.getPrice());
+	}
+	
+	@Test
+	public void test_create_car_with_AC_And_Panorma_And_Seat_Heat() {
+		Vehicle c = Car_Simple_Factory.make_Car_With_AC_And_Panorama_And_Seat_Heat();
+		int price = default_price + Aircondition.upcharge + Panorama.upcharge + Seat_Heat.upcharge;
+		
+		assertEquals(default_Text + " with Seat Heat with Panorama with an Aircondition", c.getDescription());
+		assertEquals(price, c.getPrice());
+	}
+	
+	@Test
+	public void test_create_car_with_AC_And_Seat_Heat() {
+		Vehicle c = Car_Simple_Factory.make_Car_With_AC_And_Seat_Heat();
+		int price = default_price + Aircondition.upcharge + Seat_Heat.upcharge;
+		
+		assertEquals(default_Text + " with Seat Heat with an Aircondition", c.getDescription());
+		assertEquals(price, c.getPrice());
+	}
+	
+	@Test
+	public void test_create_car_with_Seat_Heat_And_Panorama() {
+		Vehicle c = Car_Simple_Factory.make_Car_With_Seat_Heat_And_Panorama();
+		int price = default_price + Seat_Heat.upcharge + Panorama.upcharge;
+		
+		assertEquals(default_Text + " with Panorama with Seat Heat", c.getDescription());
+		assertEquals(price, c.getPrice());
 	}
 }

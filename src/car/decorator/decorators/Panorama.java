@@ -5,21 +5,36 @@ import car.decorator.Car_Decorator;
 
 
 public class Panorama extends Car_Decorator{
+	public static int upcharge = 1000;
 	
 	private Vehicle car;
+	private boolean is_panorama_open;
 	
 	public Panorama(Vehicle c){
 		car = c;
+		is_panorama_open = false;
 	}
 
 	@Override
 	public String getDescription(){
-		return car.getDescription() + " with Panorama.";
+		return car.getDescription() + " with Panorama";
 	}
 
 	@Override
 	public int getPrice(){
-		return car.getPrice() + 1000;
+		return car.getPrice() + upcharge;
+	}
+	
+	public boolean getPanoramaOpen() {
+		return is_panorama_open;
+	}
+	
+	public void open_Panorama() {
+		is_panorama_open = true;
+	}
+	
+	public void close_Panorama() {
+		is_panorama_open = false;
 	}
 
 }
