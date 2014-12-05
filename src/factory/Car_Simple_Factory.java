@@ -2,9 +2,7 @@ package factory;
 
 import car.Car;
 import car.Vehicle;
-import car.decorator.decorators.Aircondition;
-import car.decorator.decorators.Panorama;
-import car.decorator.decorators.Seat_Heat;
+import car.decorator.decorators.*;
 
 public class Car_Simple_Factory{
 	public static String default_Text = "A nice Car";

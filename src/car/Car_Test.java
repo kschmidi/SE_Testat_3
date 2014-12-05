@@ -5,9 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import car.decorator.decorators.Aircondition;
-import car.decorator.decorators.Panorama;
-import car.decorator.decorators.Seat_Heat;
+import car.decorator.decorators.*;
 import factory.Car_Simple_Factory;
 
 public class Car_Test{
