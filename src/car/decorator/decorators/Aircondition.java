@@ -1,23 +1,37 @@
 package car.decorator.decorators;
 
-import car.Car_Template;
+import car.Vehicle;
 import car.decorator.Car_Decorator;
 
 
 public class Aircondition extends Car_Decorator{
-	private Car_Template car;
+	private Vehicle car;
+	private boolean is_AC_on;
 	
-	public Aircondition(Car_Template c){
+	public Aircondition(Vehicle c){
 		car = c;
+		is_AC_on = false;
 	}
 	@Override
-	public String getDescrition(){
-		return car.getDescrition() + " with an Aircondition.";
+	public String getDescription(){
+		return car.getDescription() + " with an Aircondition.";
 	}
 
 	@Override
 	public int getPrice(){
 		return car.getPrice() + 300;
+	}
+	
+	public boolean is_AC_on() {
+		return is_AC_on;
+	}
+	
+	public void turn_AC_on() {
+		is_AC_on = true;
+	}
+	
+	public void turn_AC_off() {
+		is_AC_on = false;
 	}
 
 }

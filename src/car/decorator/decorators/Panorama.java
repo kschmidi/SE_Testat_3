@@ -1,20 +1,20 @@
 package car.decorator.decorators;
 
-import car.Car_Template;
+import car.Vehicle;
 import car.decorator.Car_Decorator;
 
 
 public class Panorama extends Car_Decorator{
 	
-	private Car_Template car;
+	private Vehicle car;
 	
-	public Panorama(Car_Template c){
+	public Panorama(Vehicle c){
 		car = c;
 	}
 
 	@Override
-	public String getDescrition(){
-		return car.getDescrition() + " with Panorama.";
+	public String getDescription(){
+		return car.getDescription() + " with Panorama.";
 	}
 
 	@Override

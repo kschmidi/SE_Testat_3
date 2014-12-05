@@ -1,6 +1,6 @@
 package car;
 
-public class Car extends Car_Template{
+public class Car extends Vehicle{
 	private String	description;
 	private int		price;
 
@@ -9,7 +9,7 @@ public class Car extends Car_Template{
 		this.price = price;
 	}
 
-	public String getDescrition(){
+	public String getDescription(){
 		return description;
 	}
 
