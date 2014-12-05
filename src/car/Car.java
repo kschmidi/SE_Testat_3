@@ -1,4 +1,4 @@
-package cars;
+package car;
 
 public class Car extends Car_Template{
 	private String	description;

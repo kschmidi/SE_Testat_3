@@ -1,4 +1,8 @@
-package cars;
+package car.decorator.decorators;
+
+import car.Car;
+import car.decorator.Car_Decorator;
+
 
 public class Aircondition extends Car_Decorator{
 	private Car car;

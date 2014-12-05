@@ -1,4 +1,4 @@
-package cars;
+package car;
 
 import static org.junit.Assert.*;
 
