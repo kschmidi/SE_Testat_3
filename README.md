@@ -19,4 +19,4 @@ The goal of the excercise is to learn the principals of some of the programm pat
 
 ### The excact excercise description (it's in german)
 
-open U20-GoF-DecoratedCars-Testatuebung3.pdf
+open [description in german](https://github.com/kschmidi/SE_Testat_3/blob/master/U20-GoF-DecoratedCars-Testatuebung3.pdf)
