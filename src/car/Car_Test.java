@@ -14,8 +14,8 @@ public class Car_Test{
 	
 	@Before
 	public void setup() {
-		default_price = Car_Simple_Factory.default_Price;
-		default_Text = Car_Simple_Factory.default_Text;
+		default_price = Vehicle.default_Price;
+		default_Text = Vehicle.default_Text;
 	}
 
 	@Test
