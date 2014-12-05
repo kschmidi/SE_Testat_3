@@ -1,14 +1,14 @@
 package car.decorator.decorators;
 
-import car.Car;
+import car.Car_Template;
 import car.decorator.Car_Decorator;
 
 
 public class Panorama extends Car_Decorator{
 	
-	private Car car;
+	private Car_Template car;
 	
-	public Panorama(Car c){
+	public Panorama(Car_Template c){
 		car = c;
 	}
 
