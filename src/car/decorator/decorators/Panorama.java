@@ -36,5 +36,4 @@ public class Panorama extends Car_Decorator{
 	public void close_panorama() {
 		is_panorama_open = false;
 	}
-
 }

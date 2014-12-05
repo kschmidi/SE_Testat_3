@@ -7,7 +7,6 @@ import car.decorator.decorators.Panorama;
 import car.decorator.decorators.Seat_Heat;
 
 public class Car_Simple_Factory{
-	
 	public static String default_Text = "A nice Car";
 	public static int default_Price = 20000;
 	

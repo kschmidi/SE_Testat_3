@@ -35,5 +35,4 @@ public class Aircondition extends Car_Decorator{
 	public void turn_AC_off() {
 		is_AC_on = false;
 	}
-
 }
