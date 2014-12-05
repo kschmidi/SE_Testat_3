@@ -4,16 +4,16 @@ import car.Car_interface;
 import car.decorator.Car_Decorator;
 
 
-public class Seat_Heat extends Car_Decorator{
+public class Car_Aircondition_Decorator extends Car_Decorator{
 	public static final int DEFAULT_UPCHARGE = 700;
-	public static final String DEFAULT_TEXT = " with Seat Heat";
+	public static final String DEFAULT_TEXT = " with an Aircondition";
 	
-	private boolean is_seat_heat_on;
+	private boolean is_AC_on;
 	
-	public Seat_Heat(Car_interface c){
+	public Car_Aircondition_Decorator(Car_interface c){
 		super(c, DEFAULT_TEXT, DEFAULT_UPCHARGE);
 	}
-
+	
 	@Override
 	public String getDescription(){
 		return super.getDescription() + description;
@@ -23,16 +23,16 @@ public class Seat_Heat extends Car_Decorator{
 	public int getPrice(){
 		return super.getPrice() + price;
 	}
-
-	public boolean is_seat_heat_on(){
-		return is_seat_heat_on;
+	
+	public boolean is_AC_on() {
+		return is_AC_on;
 	}
 	
-	public void turn_seat_heat_on() {
-		is_seat_heat_on = true;
+	public void turn_AC_on() {
+		is_AC_on = true;
 	}
 	
-	public void turn_seat_heat_off() {
-		is_seat_heat_on = false;
+	public void turn_AC_off() {
+		is_AC_on = false;
 	}
 }

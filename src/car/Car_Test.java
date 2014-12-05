@@ -14,13 +14,13 @@ public class Car_Test{
 	
 	@Before
 	public void setup() {
-		default_price = Vehicle.default_Price;
-		default_Text = Vehicle.default_Text;
+		default_price = Car_interface.DEFAULT_PRICE;
+		default_Text = Car_interface.DEFAULT_TEXT;
 	}
 
 	@Test
 	public void test_create_normal_car(){
-		Vehicle c = new Car(default_Text, default_price);
+		Car_interface c = new Car(default_Text, default_price);
 		
 		assertEquals(default_Text, c.getDescription());
 		assertEquals(default_price, c.getPrice());
@@ -28,8 +28,8 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_AC() {
-		Vehicle c = new Aircondition(new Car(default_Text, default_price));
-		int price = default_price + Aircondition.upcharge;
+		Car_interface c = new Car_Aircondition_Decorator(new Car(default_Text, default_price));
+		int price = default_price + Car_Aircondition_Decorator.DEFAULT_UPCHARGE;
 		
 		assertEquals(default_Text + " with an Aircondition", c.getDescription());
 		assertEquals(price, c.getPrice());
@@ -38,8 +38,8 @@ public class Car_Test{
 
 	@Test
 	public void test_create_car_with_Panorama() {
-		Vehicle c = new Panorama(new Car(default_Text, default_price));
-		int price = default_price + Panorama.upcharge;
+		Car_interface c = new Panorama(new Car(default_Text, default_price));
+		int price = default_price + Panorama.DEFAULT_UPCHARGE;
 		
 		assertEquals(default_Text + " with Panorama", c.getDescription());
 		assertEquals(price, c.getPrice());
@@ -47,8 +47,8 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_Seat_Heat() {
-		Vehicle c = new Seat_Heat(new Car(default_Text, default_price));
-		int price = default_price + Seat_Heat.upcharge;
+		Car_interface c = new Seat_Heat(new Car(default_Text, default_price));
+		int price = default_price + Seat_Heat.DEFAULT_UPCHARGE;
 		
 		assertEquals(default_Text + " with Seat Heat", c.getDescription());
 		assertEquals(price, c.getPrice());
@@ -56,7 +56,7 @@ public class Car_Test{
 	
 	@Test
 	public void test_meth_AC() {
-		Aircondition car = new Aircondition(new Car(default_Text, default_price));
+		Car_Aircondition_Decorator car = new Car_Aircondition_Decorator(new Car(default_Text, default_price));
 		
 		assertFalse(car.is_AC_on());
 		car.turn_AC_on();
@@ -83,8 +83,8 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_AC_And_Panorma() {
-		Vehicle c = Car_Simple_Factory.make_Car_with_AC_and_Panorama();
-		int price = default_price + Aircondition.upcharge + Panorama.upcharge;
+		Car_interface c = Car_Simple_Factory.make_Car_with_AC_and_Panorama();
+		int price = default_price + Car_Aircondition_Decorator.DEFAULT_UPCHARGE + Panorama.DEFAULT_UPCHARGE;
 
 		assertEquals(default_Text + " with Panorama with an Aircondition", c.getDescription());
 		assertEquals(price, c.getPrice());
@@ -92,8 +92,8 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_AC_And_Panorma_And_Seat_Heat() {
-		Vehicle c = Car_Simple_Factory.make_Car_with_AC_and_Panorama_and_Seat_Heat();
-		int price = default_price + Aircondition.upcharge + Panorama.upcharge + Seat_Heat.upcharge;
+		Car_interface c = Car_Simple_Factory.make_Car_with_AC_and_Panorama_and_Seat_Heat();
+		int price = default_price + Car_Aircondition_Decorator.DEFAULT_UPCHARGE + Panorama.DEFAULT_UPCHARGE + Seat_Heat.DEFAULT_UPCHARGE;
 		
 		assertEquals(default_Text + " with Seat Heat with Panorama with an Aircondition", c.getDescription());
 		assertEquals(price, c.getPrice());
@@ -101,8 +101,8 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_AC_And_Seat_Heat() {
-		Vehicle c = Car_Simple_Factory.make_Car_with_AC_and_Seat_Heat();
-		int price = default_price + Aircondition.upcharge + Seat_Heat.upcharge;
+		Car_interface c = Car_Simple_Factory.make_Car_with_AC_and_Seat_Heat();
+		int price = default_price + Car_Aircondition_Decorator.DEFAULT_UPCHARGE + Seat_Heat.DEFAULT_UPCHARGE;
 		
 		assertEquals(default_Text + " with Seat Heat with an Aircondition", c.getDescription());
 		assertEquals(price, c.getPrice());
@@ -110,8 +110,8 @@ public class Car_Test{
 	
 	@Test
 	public void test_create_car_with_Seat_Heat_And_Panorama() {
-		Vehicle c = Car_Simple_Factory.make_Car_with_Seat_Heat_and_Panorama();
-		int price = default_price + Seat_Heat.upcharge + Panorama.upcharge;
+		Car_interface c = Car_Simple_Factory.make_Car_with_Seat_Heat_and_Panorama();
+		int price = default_price + Seat_Heat.DEFAULT_UPCHARGE + Panorama.DEFAULT_UPCHARGE;
 		
 		assertEquals(default_Text + " with Panorama with Seat Heat", c.getDescription());
 		assertEquals(price, c.getPrice());

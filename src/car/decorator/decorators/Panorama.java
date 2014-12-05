@@ -1,39 +1,37 @@
 package car.decorator.decorators;
 
-import car.Vehicle;
+import car.Car_interface;
 import car.decorator.Car_Decorator;
 
-
 public class Panorama extends Car_Decorator{
-	public static int upcharge = 1000;
+	public static final int DEFAULT_UPCHARGE = 1000;
+	public static final String DEFAULT_TEXT = " with Panorama";
 	
-	private Vehicle car;
-	private boolean is_panorama_open;
-	
-	public Panorama(Vehicle c){
-		car = c;
-		is_panorama_open = false;
+	private boolean	is_panorama_open;
+
+	public Panorama(Car_interface c){
+		super(c, DEFAULT_TEXT, DEFAULT_UPCHARGE);
 	}
 
 	@Override
 	public String getDescription(){
-		return car.getDescription() + " with Panorama";
+		return super.getDescription() + description;
 	}
 
 	@Override
 	public int getPrice(){
-		return car.getPrice() + upcharge;
+		return super.getPrice() + price;
 	}
-	
-	public boolean is_panorama_open() {
+
+	public boolean is_panorama_open(){
 		return is_panorama_open;
 	}
-	
-	public void open_panorama() {
+
+	public void open_panorama(){
 		is_panorama_open = true;
 	}
-	
-	public void close_panorama() {
+
+	public void close_panorama(){
 		is_panorama_open = false;
 	}
 }
