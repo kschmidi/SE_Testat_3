@@ -57,6 +57,33 @@ public class Car_Test{
 	}
 	
 	@Test
+	public void test_meth_AC() {
+		Aircondition car = new Aircondition(new Car(default_Text, default_price));
+		
+		assertFalse(car.is_AC_on());
+		car.turn_AC_on();
+		assertTrue(car.is_AC_on());
+	}
+	
+	@Test
+	public void test_meth_Pano() {
+		Panorama car = new Panorama(new Car(default_Text, default_price));
+		
+		assertFalse(car.is_Panorama_open());
+		car.open_Panorama();
+		assertTrue(car.is_Panorama_open());
+	}
+	
+	@Test
+	public void test_meth_Seat() {
+		Seat_Heat car = new Seat_Heat(new Car(default_Text, default_price));
+		
+		assertFalse(car.is_seat_heat_on());
+		car.turn_seat_heat_on();
+		assertTrue(car.is_seat_heat_on());
+	}
+	
+	@Test
 	public void test_create_car_with_AC_And_Panorma() {
 		Vehicle c = Car_Simple_Factory.make_Car_With_AC_And_Panorama();
 		int price = default_price + Aircondition.upcharge + Panorama.upcharge;
