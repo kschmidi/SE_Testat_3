@@ -10,12 +10,12 @@ public class Car_Aircondition_Decorator extends Car_Decorator{
 	
 	private boolean is_AC_on;
 	
-	public Car_Aircondition_Decorator(Car_Template c){
-		this(c, DEFAULT_TEXT, DEFAULT_UPCHARGE);
+	public Car_Aircondition_Decorator(Car_Template car){
+		this(car, DEFAULT_TEXT, DEFAULT_UPCHARGE);
 	}
 	
-	public Car_Aircondition_Decorator(Car_Template c, String s, int p){
-		super(c, s, p);
+	public Car_Aircondition_Decorator(Car_Template car, String description, int upcharge){
+		super(car, description, upcharge);
 	}
 	
 	@Override
