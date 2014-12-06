@@ -1,6 +1,6 @@
 package car.decorator.decorators;
 
-import car.Car_interface;
+import car.Car_Template;
 import car.decorator.Car_Decorator;
 
 
@@ -10,8 +10,12 @@ public class Car_Aircondition_Decorator extends Car_Decorator{
 	
 	private boolean is_AC_on;
 	
-	public Car_Aircondition_Decorator(Car_interface c){
-		super(c, DEFAULT_TEXT, DEFAULT_UPCHARGE);
+	public Car_Aircondition_Decorator(Car_Template c){
+		this(c, DEFAULT_TEXT, DEFAULT_UPCHARGE);
+	}
+	
+	public Car_Aircondition_Decorator(Car_Template c, String s, int p){
+		super(c, s, p);
 	}
 	
 	@Override

@@ -1,6 +1,6 @@
 package car;
 
-public interface Car_interface{
+public interface Car_Template{
 	public static final String DEFAULT_TEXT = "A nice Car";
 	public static final int DEFAULT_PRICE = 20000;
 	
